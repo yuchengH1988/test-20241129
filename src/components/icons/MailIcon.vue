@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: "Phone",
+  name: "MailIcon",
   props: {
     size: {
       type: [String, Number],

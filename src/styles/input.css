@@ -81,5 +81,17 @@
             line-height: 96px;
         }
     }
+    .t-h-green {
+        transition: color 0.3s ease-in-out;
+    }
+    .t-h-green > svg path {
+        transition: fill 0.3s ease-in-out;
+    }
+    .t-h-green:hover {
+        @apply text-primary-2;
+    }
+    .t-h-green:hover > svg path {
+        fill: #288E3E;
+    }
 }
 
