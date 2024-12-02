@@ -16,7 +16,6 @@ module.exports = {
           0: '#000000',
           .3: '#EAEAEA',
           1: '#FFFFFF',
-          o3: '#F3EEE5',
         },
       },
       fontFamily: {

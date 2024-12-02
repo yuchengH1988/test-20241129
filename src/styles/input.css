@@ -3,95 +3,106 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'PPCirka';
-    src: url('../assets/fonts/PPCirka-Variable.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
+  font-family: 'PPCirka';
+  src: url('../assets/fonts/PPCirka-Variable.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'PPCirka';
-    src: url('../assets/fonts/PPCirka-Bold.otf') format('opentype');
-    font-weight: 600;
-    font-style: normal;
+  font-family: 'PPCirka';
+  src: url('../assets/fonts/PPCirka-Bold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'PP Right Didone';
-    src: url('../assets/fonts/PP Right Didone - Narrow Light.otf') format('opentype');
-    font-weight: 300;
-    font-style: normal;
+  font-family: 'PP Right Didone';
+  src: url('../assets/fonts/PP Right Didone - Narrow Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
 }
 @layer components {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .heading-1 {
+    @apply font-ppCirka font-normal;
+    font-size: 32px;
+    line-height: 28.8px;
+  }
+  .heading-2 {
+    @apply font-ppRightDidone font-light;
+    font-size: 45px;
+    line-height: 40.5px;
+  }
+  .heading-3 {
+    @apply font-ppCirka font-normal;
+    font-size: 28px;
+    line-height: 25.2px;
+  }
+  .body-1 {
+    @apply font-ppCirka font-normal;
+    font-size: 20px;
+    line-height: 18px;
+  }
+  .body-2 {
+    @apply font-ppCirka font-normal;
+    font-size: 16px;
+    line-height: 19.2px;
+  }
+  .minuim {
+    @apply font-ppCirka font-semibold;
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .display-0 {
+    @apply font-ppCirka font-normal;
+    font-size: 64px;
+    line-height: 51.2px;
+  }
+  .display-1 {
+    @apply font-ppCirka font-normal;
+    font-size: 150px;
+    line-height: 120px;
+  }
+  .display-2 {
+    @apply font-ppCirka font-normal;
+    font-size: 64px;
+    line-height: 51.2px;
+  }
+  .mobile_line_break {
+    display: block;
+  } 
+  @screen sm {
     .heading-1 {
-        @apply font-ppCirka font-normal;
-        font-size: 32px;
-        line-height: 28.8px;
+      font-size: 80px;
+      line-height: 72px;
     }
-    .heading-2 {
-        @apply font-ppRightDidone font-light;
-        font-size: 45px;
-        line-height: 40.5px;
-    }
-    .heading-3 {
-        @apply font-ppCirka font-normal;
-        font-size: 28px;
-        line-height: 25.2px;
-    }
-    .body-1 {
-        @apply font-ppCirka font-normal;
-        font-size: 20px;
-        line-height: 18px;
-    }
-    .body-2 {
-        @apply font-ppCirka font-normal;
-        font-size: 16px;
-        line-height: 19.2px;
-    }
-    .minuim {
-        @apply font-ppCirka font-semibold;
-        font-size: 16px;
-        line-height: 16px;
-    }
-    .display-0 {
-        @apply font-ppCirka font-normal;
-        font-size: 64px;
-        line-height: 51.2px;
-    }
-    .display-1 {
-        @apply font-ppCirka font-normal;
-        font-size: 150px;
-        line-height: 120px;
+    .display-0, .display-1 {
+      font-size: 300px;
+      line-height: 240px;
     }
     .display-2 {
-        @apply font-ppCirka font-normal;
-        font-size: 64px;
-        line-height: 51.2px;
+      @apply font-ppCirka font-normal;
+      font-size: 120px;
+      line-height: 96px;
     }
-    @screen sm {
-        .heading-1 {
-            font-size: 80px;
-            line-height: 72px;
-        }
-        .display-0, .display-1 {
-            font-size: 300px;
-            line-height: 240px;
-        }
-        .display-2 {
-            @apply font-ppCirka font-normal;
-            font-size: 120px;
-            line-height: 96px;
-        }
-    }
-    .t-h-green {
-        transition: color 0.3s ease-in-out;
-    }
-    .t-h-green > svg path {
-        transition: fill 0.3s ease-in-out;
-    }
-    .t-h-green:hover {
-        @apply text-primary-2;
-    }
-    .t-h-green:hover > svg path {
-        fill: #288E3E;
-    }
+    .mobile_line_break {
+      display: inline;
+    } 
+  }
+  .t-h-green {
+    transition: color 0.3s ease-in-out;
+  }
+  .t-h-green > svg path {
+    transition: fill 0.3s ease-in-out;
+  }
+  .t-h-green:hover {
+    @apply text-primary-2;
+  }
+  .t-h-green:hover > svg path {
+    fill: #288E3E;
+  }
+
 }
 

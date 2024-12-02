@@ -1,5 +1,5 @@
 <template>
-  <nav class="pt-4 sm:pt-8 px-6 sm:px-[69.4px] fixed w-screen">
+  <nav class="pt-4 sm:pt-8 px-6 sm:px-[69.4px] fixed w-screen z-50">
     <div class="flex justify-between items-center">
       <!-- Logo -->
       <div class="text-secondary-3 t-h-green font-light font-ppRightDidone sm:text-[40px] text-2xl">ZOENW</div>
