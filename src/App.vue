@@ -2,7 +2,7 @@
   <div id="app">
     <NavBar />
     <BannerComponent />
-  
+    <StoryComponent />
   </div>
 </template>
 
@@ -11,6 +11,7 @@ import { onMounted } from 'vue';
 import { gsap } from 'gsap';
 import NavBar from './components/NavBar.vue';
 import BannerComponent from './components/Banner/BannerComponent.vue';
+import StoryComponent from './components/Story/StoryComponent.vue';
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 export default {
@@ -18,6 +19,7 @@ export default {
   components: {
     NavBar,
     BannerComponent,
+    StoryComponent,
   },
   setup() {
     onMounted(() => {
@@ -25,16 +27,17 @@ export default {
       gsap.utils.toArray(".from_left").forEach((el) => {
         gsap.fromTo(
           el,
-          { x: -300, opacity: 0 }, // 起始狀態
+          { x: -300, opacity: 0 },
           {
             x: 0,
             opacity: 1,
             duration: 1,
             ease: "power3.out",
             scrollTrigger: {
-              trigger: el, // 以當前元素為觸發器
-              start: "top 90%", // 當滾動到視窗 90% 時觸發
-              toggleActions: "play none reset none",
+              trigger: el,
+              start: "top 90%",
+              toggleActions: "play none none none",
+              once: true,
             },
           }
         );
@@ -42,7 +45,7 @@ export default {
       gsap.utils.toArray(".from_right").forEach((el) => {
         gsap.fromTo(
           el,
-          { x: 300, opacity: 0 }, // 起始狀態
+          { x: 300, opacity: 0 },
           {
             x: 0,
             opacity: 1,
@@ -50,9 +53,10 @@ export default {
             ease: "power3.out",
             immediateRender: true,
             scrollTrigger: {
-              trigger: el, // 以當前元素為觸發器
-              start: "top 90%", // 當滾動到視窗 90% 時觸發
-              toggleActions: "play none reset none",
+              trigger: el,
+              start: "top 90%",
+              toggleActions: "play none none none",
+              once: true,
             },
           }
         );

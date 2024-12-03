@@ -59,7 +59,7 @@ export default {
     ];
     const currentIndex = ref(0);
     const onSlideChange = (swiper) => {
-      currentIndex.value = swiper.activeIndex % slides.length; // 確保索引有效
+      currentIndex.value = swiper.activeIndex % slides.length;
     };
     return {
       slides,
@@ -73,9 +73,9 @@ export default {
 <style>
 .carousel-container {
   z-index: 20;
-  padding-top: 259px; /* 距離頂部 259px */
+  padding-top: 259px;
   display: flex;
-  justify-content: center; /* 水平置中 */
+  justify-content: center;
 }
 
 .swiper {

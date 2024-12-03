@@ -37,7 +37,7 @@
 </template>
 <script>
 import CarouselComponent from './CarouselComponent.vue';
-import VectorIcon from '../icons/VectorIcon.vue';
+import VectorIcon from '../Icons/VectorIcon.vue';
 
 
 export default {

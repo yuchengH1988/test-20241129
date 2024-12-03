@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import PhoneIcon from './icons/PhoneIcon.vue';
+import PhoneIcon from './Icons/PhoneIcon.vue';
 export default {
   name: "NavBar",
   components: {
