@@ -64,7 +64,6 @@ export default {
   methods: {
     selectTab(index) {
       this.selectedTab = index;
-      console.log(`Selected tab: ${this.tabs[index]}`);
     },
     toggleMenu () {
       this.isMenuOpen = !this.isMenuOpen

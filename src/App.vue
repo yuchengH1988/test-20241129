@@ -3,6 +3,7 @@
     <NavBar />
     <BannerComponent />
     <StoryComponent />
+    <ServiceComponent />
   </div>
 </template>
 
@@ -12,7 +13,9 @@ import { gsap } from 'gsap';
 import NavBar from './components/NavBar.vue';
 import BannerComponent from './components/Banner/BannerComponent.vue';
 import StoryComponent from './components/Story/StoryComponent.vue';
+import ServiceComponent from './components/Service/ServiceComponent.vue';
 import ScrollTrigger from "gsap/ScrollTrigger";
+
 
 export default {
   name: 'App',
@@ -20,6 +23,7 @@ export default {
     NavBar,
     BannerComponent,
     StoryComponent,
+    ServiceComponent,
   },
   setup() {
     onMounted(() => {

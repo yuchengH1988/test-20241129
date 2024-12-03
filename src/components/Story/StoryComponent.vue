@@ -1,5 +1,5 @@
 <template>
-  <div class="relative overflow-hidden h-[417px] border-t border-b bg-secondary-1 border-primary-2 text-primary-2 flex items-center">
+  <div class="relative overflow-hidden h-[417px] border-t  bg-secondary-1 border-primary-2 text-primary-2 flex items-center">
     <div ref="marquee" class="absolute flex whitespace-nowrap">
       <div
         class="display-0 my-auto">
