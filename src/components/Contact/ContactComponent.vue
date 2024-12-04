@@ -1,5 +1,5 @@
 <template>
-  <div class="relative text-center pb-[124px] ">
+  <div id="Contact" class="relative text-center pb-[124px] ">
     <p class="from_left title ml-[67px]">Contact</p>
     <p class="from_left text-primary-1 heading-2 mt-[18px]">+339 566 789</p>
    

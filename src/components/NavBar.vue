@@ -11,7 +11,7 @@
             v-for="(tab, index) in tabs"
             :key="index"
             class="t-h-green"
-            @click="selectTab(index)"
+            @click="scrollToSection('#' + tab)"
           >
             {{ tab }}
           </button>
@@ -19,7 +19,7 @@
         <div class="nav-line"></div>
         <button
           class="flex t-h-green items-center ml-6"
-          @click="selectTab('Contact')"
+          @click="scrollToSection('#Contact')"
         >
           <PhoneIcon size="15" class="mr-1" />
           Contact
@@ -49,6 +49,10 @@
 
 <script>
 import PhoneIcon from './Icons/PhoneIcon.vue';
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
 export default {
   name: "NavBar",
   components: {
@@ -62,8 +66,18 @@ export default {
     };
   },
   methods: {
-    selectTab(index) {
-      this.selectedTab = index;
+    scrollToSection(sectionId) {
+      const targetElement = document.querySelector(sectionId); // 使用 id 選取
+      if (targetElement) {
+        gsap.to(document.body, {
+          duration: 1,
+          scrollTo: {
+            y: sectionId,
+            offsetY: 120,
+          },
+          ease: "power2.out",
+        });
+      }
     },
     toggleMenu () {
       this.isMenuOpen = !this.isMenuOpen

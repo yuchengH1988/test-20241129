@@ -7,6 +7,7 @@
     <Banner2Component />
     <GalleryComponent />
     <ContactComponent />
+    <FooterComponent />
   </div>
 </template>
 
@@ -20,6 +21,7 @@ import ServiceComponent from './components/Service/ServiceComponent.vue';
 import Banner2Component from './components/Banner2/Banner2Component.vue';
 import GalleryComponent from './components/Gallery/GalleryComponent.vue';
 import ContactComponent from './components/Contact/ContactComponent.vue';
+import FooterComponent from './components/Footer/FooterComponent.vue';
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 
@@ -33,6 +35,7 @@ export default {
     Banner2Component,
     GalleryComponent,
     ContactComponent,
+    FooterComponent,
   },
   setup() {
     onMounted(() => {
