@@ -67,7 +67,7 @@ export default {
   margin-left: 69px;
 }
 #btn_view div {
-  transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 #btn_view:hover > div {
   background: #288E3E;

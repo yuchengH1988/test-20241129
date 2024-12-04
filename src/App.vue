@@ -4,6 +4,7 @@
     <BannerComponent />
     <StoryComponent />
     <ServiceComponent />
+    <Banner2Component />
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import NavBar from './components/NavBar.vue';
 import BannerComponent from './components/Banner/BannerComponent.vue';
 import StoryComponent from './components/Story/StoryComponent.vue';
 import ServiceComponent from './components/Service/ServiceComponent.vue';
+import Banner2Component from './components/Banner2/Banner2Component.vue';
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 
@@ -24,6 +26,7 @@ export default {
     BannerComponent,
     StoryComponent,
     ServiceComponent,
+    Banner2Component,
   },
   setup() {
     onMounted(() => {
