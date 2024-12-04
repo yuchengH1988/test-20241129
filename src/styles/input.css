@@ -20,11 +20,12 @@
   font-weight: 300;
   font-style: normal;
 }
-@layer components {
-  html, body {
-    overflow-x: hidden;
-  }
 
+html, body {
+  overflow-x: hidden;
+}
+
+@layer components {
   .heading-1 {
     @apply font-ppCirka font-normal;
     font-size: 32px;
@@ -73,7 +74,7 @@
   .mobile_line_break {
     display: block;
   } 
-  @screen sm {
+  @screen md {
     .heading-1 {
       font-size: 80px;
       line-height: 72px;

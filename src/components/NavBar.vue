@@ -1,11 +1,11 @@
 <template>
-  <nav class="pt-4 sm:pt-8 px-6 sm:px-[69.4px] fixed w-screen z-50">
+  <nav class="pt-4 md:pt-8 px-6 md:px-[69.4px] fixed w-screen z-50">
     <div class="flex justify-between items-center">
       <!-- Logo -->
-      <div class="text-secondary-3 t-h-green font-light font-ppRightDidone sm:text-[40px] text-2xl">ZOENW</div>
+      <div class="text-secondary-3 t-h-green font-light font-ppRightDidone md:text-[40px] text-2xl">ZOENW</div>
 
       <!-- Tabs -->
-      <div class="sm:flex hidden px-10 py-4 bg-secondary-3 rounded-full text-grayscale-0">
+      <div class="md:flex hidden px-10 py-4 bg-secondary-3 rounded-full text-grayscale-0">
         <div class="flex space-x-10 mr-6">
           <button
             v-for="(tab, index) in tabs"
@@ -28,7 +28,7 @@
       <button
         @click="toggleMenu"
         v-bind:class="[
-          'sm:hidden block p-4 bg-secondary-3 rounded-full text-grayscale-0',
+          'md:hidden block p-4 bg-secondary-3 rounded-full text-grayscale-0',
           isMenuOpen ? 'bg-primary-2' : 'bg-secondary-3'
         ]">
         <div

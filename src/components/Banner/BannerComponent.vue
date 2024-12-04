@@ -1,7 +1,7 @@
 <template>
   <div
     id="banner"
-    class="sm:h-[1109px] h-[815px] relative">
+    class="md:h-[1109px] h-[815px] relative">
     <div
       class="header display-0 text-primary-1 whitespace-nowrap z-10">
       <div id="banner_text1" class="from_right">

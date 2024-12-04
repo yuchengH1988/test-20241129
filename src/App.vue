@@ -5,6 +5,7 @@
     <StoryComponent />
     <ServiceComponent />
     <Banner2Component />
+    <GalleryComponent />
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import BannerComponent from './components/Banner/BannerComponent.vue';
 import StoryComponent from './components/Story/StoryComponent.vue';
 import ServiceComponent from './components/Service/ServiceComponent.vue';
 import Banner2Component from './components/Banner2/Banner2Component.vue';
+import GalleryComponent from './components/Gallery/GalleryComponent.vue';
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 
@@ -27,6 +29,7 @@ export default {
     StoryComponent,
     ServiceComponent,
     Banner2Component,
+    GalleryComponent,
   },
   setup() {
     onMounted(() => {
@@ -85,10 +88,6 @@ export default {
 <style>
 #app {
   width: 100vw;
-  min-height: 300vh;
   background: #000000;
-}
-html {
-  overflow-x: hidden;
 }
 </style>

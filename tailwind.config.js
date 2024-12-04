@@ -1,5 +1,7 @@
 module.exports = {
-  content: ['./src/**/*.{html,js,vue}'], // 指定掃描的檔案
+  content: [
+    './src/**/*.{html,js,vue}',
+  ],
   theme: {
     extend: {
       colors: {
@@ -11,7 +13,7 @@ module.exports = {
           1: '#672B11',
           2: '#DBBB76',
           3: '#F3EEE5',
-        },  // 次要色
+        }, 
         grayscale: {
           0: '#000000',
           .3: '#EAEAEA',
@@ -24,7 +26,7 @@ module.exports = {
       }
     },
     screems: {
-      sm: '640px',
+      md: '768px',
     }
   },
   plugins: [],
