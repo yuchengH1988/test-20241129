@@ -6,6 +6,7 @@
     <ServiceComponent />
     <Banner2Component />
     <GalleryComponent />
+    <ContactComponent />
   </div>
 </template>
 
@@ -18,6 +19,7 @@ import StoryComponent from './components/Story/StoryComponent.vue';
 import ServiceComponent from './components/Service/ServiceComponent.vue';
 import Banner2Component from './components/Banner2/Banner2Component.vue';
 import GalleryComponent from './components/Gallery/GalleryComponent.vue';
+import ContactComponent from './components/Contact/ContactComponent.vue';
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 
@@ -30,6 +32,7 @@ export default {
     ServiceComponent,
     Banner2Component,
     GalleryComponent,
+    ContactComponent,
   },
   setup() {
     onMounted(() => {
