@@ -11,11 +11,22 @@ export default {
 </script>
 <style>
   .texts div {
-    height: 83.76px;
+    height: 46.45px;
     width: 0;
     border-left: 1px solid #DBBB76;
     transform: rotate(19.41deg); /* 斜角 */
     position: relative; /* 可調整相對位置 */
-    margin: 0 40px 24px;
+    margin: -4px 32px 0;
+  }
+
+  @screen md {
+    .texts div {
+      height: 83.76px;
+      width: 0;
+      border-left: 1px solid #DBBB76;
+      transform: rotate(19.41deg); /* 斜角 */
+      position: relative; /* 可調整相對位置 */
+      margin: 0 40px 24px;
+    }
   }
 </style>

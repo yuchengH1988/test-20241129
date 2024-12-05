@@ -1,7 +1,7 @@
 <template>
   <div class="bg-secondary-3 whitespace-nowrap">
     <div
-      class="relatvie overflow-hdden pt-[54px] pb-[23.2px] border-b border-[#1313131A]">
+      class="relatvie overflow-hdden pt-[25.5px] md:pt-[54px] pb-[15.5px] md:pb-[23.2px] border-b border-[#1313131A]">
       <div
         ref="marquee">
         <TextsComponent/>
@@ -9,7 +9,7 @@
       </div>
     </div>
     <div
-      class="relatvie overflow-hdden pt-[47.8px] pb-[29px]">
+      class="relatvie overflow-hdden pt-[25.5px] md:pt-[47.8px] pb-[15.5px] md:pb-[29px]">
       <div
         ref="marquee2">
         <TextsComponent/>
