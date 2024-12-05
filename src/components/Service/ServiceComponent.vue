@@ -2,7 +2,7 @@
   <div
     id="service_container"
     ref="serviceContainer"
-    class="h-[603px] inline-flex relative w-full">
+    class="h-[680px] md:h-[603px] inline-flex relative w-full">
     <LeftServiceComponent/>
     <RightServiceComponent/>
   </div>

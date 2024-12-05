@@ -1,12 +1,12 @@
 <template>
   <div
-    class="w-[720px] px-[40px] pt-[102.5px]">
+    class="w-[298px] md:w-[720px] py-[100px] px-[40px] md:pt-[102.5px] md:pb-0 border-r border-primary-2">
     <div
-      class="mt-6 pl-[60.5px] text-primary-2">
-      <div class="heading-1">
+      class="mt-[-27px] md:mt-6 md:pl-[60.5px] text-primary-2">
+      <div class="heading-1 whitespace-normal md:whitespace-nowrap">
         Cinquième Élément
       </div>
-      <div class="body-2 mt-2 w-[655px] whitespace-normal">
+      <div class="body-2 mt-2 md:w-[655px] whitespace-normal">
         Tarantino wrote Pulp Fiction in 1992 and 1993, incorporating scenes that Avary originally wrote for True Romance (1993). Do et reprehenderit exercit reprehendetation excepteur aliqua duis culpa.
       </div>
     </div>
