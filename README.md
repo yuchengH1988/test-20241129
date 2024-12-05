@@ -1,24 +1,46 @@
-# block
+# 專案簡介
 
-## Project setup
+## 專案名稱
+
+Block Studio test
+
+## 技術框架
+
+前端框架
+- Vue 3.2
+
+樣式設計
+- PostCss + Autoprefixer
+- Tailwind
+
+動畫與交互
+- GSAP
+- Swiper
+
+3D
+- Three.js
+
+版本控制
+- Git + GitHub Workflow
+
+## 部署與執行方式
+
+### 環境要求
+
+- Node.js 18.0+
+- npm / yarn 7.0+
+
+### 啟動步驟
+
 ```
-yarn install
+npm install
+npm serve
 ```
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+### 部署環境
 
-### Compiles and minifies for production
-```
-yarn build
-```
+使用 gh-pages 部署至[github page](https://yuchengh1988.github.io/test-20241129/)
 
-### Lints and fixes files
-```
-yarn lint
-```
+## 開發團隊
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [Calvin Huang](https://github.com/yuchengH1988)
