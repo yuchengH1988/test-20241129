@@ -29,7 +29,7 @@
         @click="toggleMenu"
         v-bind:class="[
           'md:hidden block p-4 bg-secondary-3 rounded-full text-grayscale-0',
-          isMenuOpen ? 'bg-primary-2' : 'bg-secondary-3'
+          isMenuOpen ? '!bg-primary-2' : 'bg-secondary-3'
         ]">
         <div
           v-bind:class="['hamburger space-y-1.5', isMenuOpen ? 'hidden' : 'block']">

@@ -73,19 +73,20 @@ export default {
 <style>
 .carousel-container {
   z-index: 20;
-  padding-top: 259px;
+  padding-top: 179px;
   display: flex;
   justify-content: center;
+  margin-left: -116px;
 }
 
 .swiper {
-  width: 746px;
-  height: 519px;
+  width: 333px;
+  height: 338px;
 }
 
 .image-wrapper {
-  width: 746px;
-  height: 519px;
+  width: 333px;
+  height: 338px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,22 +94,53 @@ export default {
 }
 
 .image-wrapper img {
-  max-width: 110%;
+  max-width: 210%;
   min-height: 417px;
   object-fit: cover;
-  object-position: 50% 87px;
+  object-position: -10px 84px;
 }
+
 .sync-display {
-  width: 503px;
-  height: 417px;
+  width: 194px;
+  height: 161px;
   position:absolute;
-  top: 123px;
-  right: 50%;
-  transform: translate(calc(50% + 400px), 0);
+  top: 80px;
+  right: calc(50% - 232px);
   z-index: 0;
 }
 .sync-display img {
   max-width: 210%;
-  object-position: 50px -66px;
-} 
+  object-position: 23px -23px;
+}
+@screen md {
+  .carousel-container {
+    margin-left: 0;
+    padding-top: 259px;
+  }
+  .swiper {
+    width: 746px;
+    height: 519px;
+  }
+  .image-wrapper {
+    width: 746px;
+    height: 519px;
+  }
+  .image-wrapper img {
+    max-width: 110%;
+    min-height: 417px;
+    object-position: 50% 87px;
+  }
+  .sync-display {
+    width: 503px;
+    height: 417px;
+    top: 123px;
+    right: 50%;
+    transform: translate(calc(50% + 400px), 0);
+  }
+  .sync-display img {
+    max-width: 210%;
+    object-position: 50px -66px;
+  }
+
+}
 </style>
