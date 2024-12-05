@@ -127,7 +127,10 @@ export default {
 
     watch(isLoading, (newValue) => {
       if (!newValue) {
-        initGSAP();
+        setTimeout(() => {
+          initGSAP();
+          ScrollTrigger.refresh();
+        }, 100);
       }
     });
     return {
