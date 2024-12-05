@@ -1,14 +1,14 @@
 <template>
-  <div>
+  <div class="mt-8 md:mt-0">
     <div
       class="overflow-hidden"
-      :style="{ width: width, height: height }"
+      :style="{ width: dynamicWidth, height: dynamicHeight }"
     >
       <img
         :src="imageUrl"
         alt="Dynamic Image"
         class="image"
-        :style="{ width: width, height: height, ...imgStyle }"
+        :style="{ width: dynamicWidth, height: dynamicHeight, ...dynamicStyle }"
       />
     </div>
     <div
@@ -20,6 +20,7 @@
  
 </template>
 <script>
+  import { ref, onMounted, onUnmounted, watch } from "vue";
   export default {
     name: "ArtworkComponent",
     props: {
@@ -43,6 +44,37 @@
         type: Object,
         default: () => ({}),
       }
+    },
+    setup(props) {
+      const dynamicWidth = ref(props.width);
+      const dynamicHeight = ref(props.height);
+      const dynamicStyle = ref({})
+      const screenWidth = ref(window.innerWidth);
+      const updateDimensions = () => {
+        if (screenWidth.value < 768) {
+          const contentWidth = screenWidth.value * 0.8972
+          const newWidth = contentWidth > 500 ? 500 : contentWidth
+          dynamicWidth.value = `${newWidth}px`;
+          dynamicHeight.value = `${newWidth / 323 * 357}px`;
+          dynamicStyle.value = {}
+        } else {
+          dynamicWidth.value = props.width;
+          dynamicHeight.value = props.height;
+          dynamicStyle.value = props.imgStyle
+        }
+      };
+      const onResize = () => {
+        screenWidth.value = window.innerWidth;
+      };
+      onMounted(() => {
+        window.addEventListener("resize", onResize);
+        updateDimensions();
+      });
+      onUnmounted(() => {
+        window.removeEventListener("resize", onResize);
+      });
+      watch(screenWidth, updateDimensions);
+      return { dynamicWidth, dynamicHeight };
     },
   };
 </script>
