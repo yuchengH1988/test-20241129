@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 import { gsap } from "gsap";
 import ContentComponent from "./ContentComponent.vue";
 import * as THREE from "three";
@@ -22,7 +22,12 @@ export default {
   components: {
     ContentComponent,
   },
-  setup() {
+  props: {
+    isLoading: {
+      type: Boolean
+    },
+  },
+  setup(props) {
     const marquee = ref(null);
     const renderer = ref(null);
     const camera = ref(null)
@@ -117,9 +122,15 @@ export default {
     };
 
     onMounted(() => {
-      initScene();
       window.addEventListener("resize", onResize);
       setupMarquee();
+    });
+    watch(() => props.isLoading, (newValue) => {
+      if (!newValue) {
+        setTimeout(() => {
+          initScene();
+        }, 300);
+      }
     });
 
     return { marquee, d3 };

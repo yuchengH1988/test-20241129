@@ -4,7 +4,7 @@
     <div v-show="!isLoading">
       <NavBar />
       <BannerComponent />
-      <StoryComponent />
+      <StoryComponent :isLoading="isLoading"/>
       <ServiceComponent />
       <Banner2Component />
       <GalleryComponent />
