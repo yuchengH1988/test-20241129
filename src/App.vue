@@ -1,18 +1,21 @@
 <template>
   <div id="app">
-    <NavBar />
-    <BannerComponent />
-    <StoryComponent />
-    <ServiceComponent />
-    <Banner2Component />
-    <GalleryComponent />
-    <ContactComponent />
-    <FooterComponent />
+    <LoadComponent v-show="isLoading" :progress="progress"/>
+    <div v-show="!isLoading">
+      <NavBar />
+      <BannerComponent />
+      <StoryComponent />
+      <ServiceComponent />
+      <Banner2Component />
+      <GalleryComponent />
+      <ContactComponent />
+      <FooterComponent />
+    </div>
   </div>
 </template>
 
 <script>
-import { onMounted } from 'vue'; 
+import { onMounted, ref, watch } from 'vue'; 
 import { gsap } from 'gsap';
 import NavBar from './components/NavBar.vue';
 import BannerComponent from './components/Banner/BannerComponent.vue';
@@ -22,6 +25,7 @@ import Banner2Component from './components/Banner2/Banner2Component.vue';
 import GalleryComponent from './components/Gallery/GalleryComponent.vue';
 import ContactComponent from './components/Contact/ContactComponent.vue';
 import FooterComponent from './components/Footer/FooterComponent.vue';
+import LoadComponent from './components/Load/LoadComponent.vue';
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 
@@ -36,9 +40,39 @@ export default {
     GalleryComponent,
     ContactComponent,
     FooterComponent,
+    LoadComponent,
   },
   setup() {
-    onMounted(() => {
+    const isLoading = ref(true);
+    const progress = ref(0);
+    let loadedResources = 0; // eslint-disable-line no-unused-vars
+    const calculateProgress = () => {
+      const images = document.querySelectorAll('img');
+      const totalResources = images.length;
+      let loadedResources = 0;
+      images.forEach((img) => {
+        img.onload = () => {
+          loadedResources++;
+          progress.value = Math.round((loadedResources / totalResources) * 100);
+          setTimeout(() => {}, 20000000)
+          if (loadedResources === totalResources) {
+            setTimeout(() => {
+              isLoading.value = false;
+            }, 500);
+          }
+        };
+        img.onerror = () => {
+          loadedResources++;
+          progress.value = Math.round((loadedResources / totalResources) * 100);
+          if (loadedResources === totalResources) {
+            setTimeout(() => {
+              isLoading.value = false;
+            }, 500);
+          }
+        };
+      });
+    };
+    const initGSAP = () => {
       gsap.registerPlugin(ScrollTrigger);
       gsap.utils.toArray(".from_left").forEach((el) => {
         gsap.fromTo(
@@ -86,7 +120,20 @@ export default {
           ease: "power3.out",
         }
       );
+    }
+    onMounted(() => {
+      calculateProgress();
     });
+
+    watch(isLoading, (newValue) => {
+      if (!newValue) {
+        initGSAP();
+      }
+    });
+    return {
+      isLoading,
+      progress,
+    }
   }
 } 
 </script>
