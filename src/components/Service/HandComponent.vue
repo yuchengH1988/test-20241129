@@ -12,10 +12,13 @@
 </template>
 <script>
 import { ref, onMounted } from "vue";
+import { gsap } from "gsap/gsap-core";
 
 export default {
   name: "HandComponet",
   setup () {
+    const svgRef = ref(null);
+    const pathRef = ref(null);
     const dynamicWidth = ref(156);
     const dynamicHeight = ref(210);
     const updateDimensions = () => {
@@ -30,10 +33,26 @@ export default {
       }
     };
     onMounted(() => {
+      const path = pathRef.value;
+      const length = path.getTotalLength();
+      gsap.set(path, {
+        strokeDasharray: length,
+        strokeDashoffset: length,
+      });
+      gsap.to(path, {
+        strokeDashoffset: 0,
+        duration: 2,
+        ease: "power1.inOut",
+        repeat: -1,
+        yoyo: true,
+      });
+
       updateDimensions(); // 初始設置
       window.addEventListener("resize", updateDimensions);
     });
     return {
+      svgRef,
+      pathRef,
       dynamicWidth,
       dynamicHeight,
     };

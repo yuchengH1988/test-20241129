@@ -15,11 +15,11 @@
     <div class="from_left body-2 text-secondary-3 mt-[40px] md:mt-[43px] w-[317px] md:w-[474px] mx-auto text-center">
       Sit elit incididunt Lorem minim ea pariatur anim dolor ut veniam amet ad. Ipsum tempor commodo ullamco Lorem incididunt proident nisi nostrud dolore. Et labore minim laboris esse amet eu eu exercitation ea esse velit tempor culpa.
     </div>
-    <div ref="callText" class="call">
-      CALL
+    <div class="call">
+      <div class="relative from_right">CALL</div>
     </div>
     <div class="me">
-      ME
+      <div class="relative from_left">ME</div>
     </div>
   </div>
 </template>
@@ -30,7 +30,6 @@
     name: "ContactComponent",
     setup () {
       const imageWrapper = ref(null);
-      const callText = ref(null)
       const zoom = ref(null);
       const wrapperBounds = ref({});
       onMounted(() => {
@@ -38,7 +37,6 @@
         const circle = zoom.value;
         const onMouseEnter = () => {
           wrapperBounds.value = wrapper.getBoundingClientRect();
-          console.log('wrapperBounds.value', wrapperBounds.value)
           gsap.to(circle, {
             scale: 1,
             duration: 0.3,
@@ -75,7 +73,6 @@
     return {
       imageWrapper,
       zoom,
-      callText
     };
   }
 }
@@ -106,7 +103,7 @@
   }
   .me {
     position: absolute;
-    bottom: -27px;
+    bottom: -28px;
     left: calc(50% - 216px);
   }
   @screen md {
