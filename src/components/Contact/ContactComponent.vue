@@ -7,7 +7,7 @@
       class="relative mt-[51px] md:mt-[56px] md:w-[92.08vw] h-[276px] md:h-[445px] overflow-hidden mx-auto relative">
       <img
         class="from_left call_me_img "
-        src="/assets/images/call_me.jpeg"
+        :src="baseUrl + '/assets/images/call_me.jpeg'"
       />
       <div class="zoom" ref="zoom"></div>
       <div class="blend"></div>
@@ -29,6 +29,7 @@
   export default {
     name: "ContactComponent",
     setup () {
+      const baseUrl = process.env.VUE_APP_BASE_URL
       const imageWrapper = ref(null);
       const zoom = ref(null);
       const wrapperBounds = ref({});
@@ -73,6 +74,7 @@
     return {
       imageWrapper,
       zoom,
+      baseUrl,
     };
   }
 }

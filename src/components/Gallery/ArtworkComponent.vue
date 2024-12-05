@@ -5,7 +5,7 @@
       :style="{ width: dynamicWidth, height: dynamicHeight }"
     >
       <img
-        :src="imageUrl"
+        :src="baseUrl + imageUrl"
         alt="Dynamic Image"
         class="image"
         :style="{ width: dynamicWidth, height: dynamicHeight, ...dynamicStyle }"
@@ -46,6 +46,7 @@
       }
     },
     setup(props) {
+      const baseUrl = process.env.VUE_APP_BASE_URL
       const dynamicWidth = ref(props.width);
       const dynamicHeight = ref(props.height);
       const dynamicStyle = ref({})
@@ -74,7 +75,7 @@
         window.removeEventListener("resize", onResize);
       });
       watch(screenWidth, updateDimensions);
-      return { dynamicWidth, dynamicHeight, dynamicStyle };
+      return { dynamicWidth, dynamicHeight, dynamicStyle, baseUrl };
     },
   };
 </script>

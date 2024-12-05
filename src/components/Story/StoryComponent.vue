@@ -27,6 +27,7 @@ export default {
     const renderer = ref(null);
     const camera = ref(null)
     const d3 = ref(null);
+    const baseUrl = process.env.VUE_APP_BASE_URL
 
     const initScene = () => {
       const scene = new THREE.Scene();
@@ -45,7 +46,7 @@ export default {
       const loader = new OBJLoader();
       let model = null; 
       loader.load(
-        "/assets/apple/apple.obj",
+        baseUrl + "/assets/apple/apple.obj",
         (object) => {
           object.scale.set(5, 5, 5);
           scene.add(object);

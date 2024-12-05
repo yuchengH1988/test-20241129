@@ -22,13 +22,13 @@
         v-for="(item, index) in slides"
         :key="index">
         <div class="image-wrapper">
-          <img :src="item" :alt="'Slide ' + (index + 1)" />
+          <img :src="baseUrl + item" :alt="'Slide ' + (index + 1)" />
         </div>
       </swiper-slide>
     </swiper>
   </div>
   <div class="image-wrapper sync-display">
-    <img :src="slides[currentIndex]" alt="Sync Slide" />
+    <img :src="baseUrl + slides[currentIndex]" alt="Sync Slide" />
   </div>
 </template>
 
@@ -47,6 +47,7 @@ export default {
     SwiperSlide,
   },
   setup() {
+    const baseUrl = process.env.VUE_APP_BASE_URL
     const slides = [
       "/assets/images/blonde_dog.jpeg",
       "/assets/images/red_car.jpeg",
@@ -66,6 +67,7 @@ export default {
       modules: [EffectCreative],
       currentIndex,
       onSlideChange,
+      baseUrl
     };
   },
 };
