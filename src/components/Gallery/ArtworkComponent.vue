@@ -74,7 +74,7 @@
         window.removeEventListener("resize", onResize);
       });
       watch(screenWidth, updateDimensions);
-      return { dynamicWidth, dynamicHeight };
+      return { dynamicWidth, dynamicHeight, dynamicStyle };
     },
   };
 </script>

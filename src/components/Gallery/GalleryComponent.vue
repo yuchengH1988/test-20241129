@@ -1,5 +1,5 @@
 <template>
-  <div id="Gallery" class="relative max-w-[500px] md:max-w-none w-[89.72vw] md:w-[90.14vw]  mx-auto overflow-x-hidden">
+  <div id="Gallery" class="mb-[56px] md:mb-0 relative max-w-[500px] md:max-w-none w-[89.72vw] md:w-[90.14vw]  mx-auto overflow-x-hidden">
     <div class="gallery_header text-primary-1 display-1">
       <div class="relative from_right">
         Gallery
