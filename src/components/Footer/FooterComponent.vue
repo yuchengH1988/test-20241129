@@ -1,8 +1,8 @@
 <template>
-  <div class="relative bg-secondary-3 h-[173px] flex items-center justify-center text-primary-1">
-    <p class="brand">ZOENW</p>
+  <div class="relative bg-secondary-3 h-[173px] flex flex-col items-center justify-center text-primary-1">
+    <p class="brand mb-6 md:mb-0">ZOENW</p>
     <div class="rwd">
-      <div class="flex tab">
+      <div class="flex tab justify-center">
         <button class="t-h-green">Privacy Policy</button>
         <div class="slash"></div>
         <button class="t-h-green">Brand Site</button>
@@ -43,6 +43,12 @@
     margin: 0 12px;
     opacity: 1;
     transform: rotate(20deg);
+  }
+  .rwd {
+    display: block;
+    width: auto;
+    top: 0;
+    left: 0;
   }
   @screen md {
     .brand {
