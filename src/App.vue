@@ -28,7 +28,6 @@ import FooterComponent from './components/Footer/FooterComponent.vue';
 import LoadComponent from './components/Load/LoadComponent.vue';
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-
 export default {
   name: 'App',
   components: {
