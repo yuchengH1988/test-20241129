@@ -69,7 +69,7 @@ export default {
     scrollToSection(sectionId) {
       const targetElement = document.querySelector(sectionId); // 使用 id 選取
       if (targetElement) {
-        gsap.to(document.body, {
+        gsap.to(window, {
           duration: 1,
           scrollTo: {
             y: sectionId,
