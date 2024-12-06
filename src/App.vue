@@ -125,12 +125,12 @@ export default {
       calculateProgress();
     });
 
-    watch(isLoading, (newValue) => {
+    watch(isLoading, async (newValue) => {
       if (!newValue) {
         setTimeout(() => {
           initGSAP();
           ScrollTrigger.refresh();
-        }, 100);
+        }, 300);
       }
     });
     return {

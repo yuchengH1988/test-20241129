@@ -85,6 +85,7 @@ export default {
 
       const animate = () => {
         requestAnimationFrame(animate);
+        if (model) model.rotation.y += 0.01
         renderer.value.render(scene, camera.value);
       };
       animate();
