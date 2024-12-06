@@ -1,6 +1,7 @@
 <template>
   <div id="Gallery" class="mb-[56px] md:mb-0 relative max-w-[500px] md:max-w-none w-[89.72vw] md:w-[90.14vw]  mx-auto md:overflow-x-hidden">
     <div class="gallery_header text-primary-1 display-1">
+      <P5jsComponent />
       <div class="relative from_right">
         Gallery
       </div>
@@ -84,10 +85,12 @@
 </template>
 <script>
   import ArtworkComponent from './ArtworkComponent.vue';
+  import P5jsComponent from './P5jsComponent.vue';
   export default {
     name: "GallerComponent",
     components: {
       ArtworkComponent,
+      P5jsComponent,
     }
   }
 
@@ -97,14 +100,15 @@
     position: relative;
     display: flex;
     justify-content: center;
-    padding-top: 65px;
+    padding-top: 100px;
+    padding-bottom: 50px
   }
   .title {
     @apply heading-3 text-secondary-3;
   }
   @screen md {
     .gallery_header {
-      padding-top: 0;
+      padding: 0;
       position: absolute;
       top: 841px;
       left: 50%;
