@@ -22,18 +22,25 @@
         v-for="(item, index) in slides"
         :key="index">
         <div class="image-wrapper">
-          <img :src="baseUrl + item" :alt="'Slide ' + (index + 1)" />
+          <img
+            :src="baseUrl + item"
+            :alt="'Slide ' + (index + 1)" />
         </div>
       </swiper-slide>
     </swiper>
   </div>
   <div class="image-wrapper sync-display">
-    <img :src="baseUrl + slides[currentIndex]" alt="Sync Slide" />
+    <img
+      ref="image"
+      :src="baseUrl + slides[currentIndex]"
+      class="fade"
+      alt="Sync Slide" />
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, watch } from 'vue';
+import { gsap } from 'gsap';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
 
@@ -60,19 +67,29 @@ export default {
     ];
     const currentIndex = ref(0);
     const onSlideChange = (swiper) => {
-      currentIndex.value = swiper.activeIndex % slides.length;
+      currentIndex.value = swiper.realIndex;
     };
+    const image = ref(null);
+
+    watch(() => currentIndex.value, () => {
+      gsap.fromTo(
+        image.value,
+        { opacity: 0, scale: 0.5, filter: 'grayscale(100%)' },
+        { opacity: 1, scale: 1, duration: 3, filter: 'grayscale(0%)', ease: 'power1.out' }
+      );
+    });
     return {
       slides,
       modules: [EffectCreative],
       currentIndex,
       onSlideChange,
-      baseUrl
+      baseUrl,
+      image,
     };
   },
 };
 </script>
-<style>
+<style scoped>
 .carousel-container {
   z-index: 20;
   padding-top: 179px;
@@ -114,6 +131,7 @@ export default {
   max-width: 210%;
   object-position: 23px -23px;
 }
+
 @screen md {
   .carousel-container {
     margin-left: 0;
