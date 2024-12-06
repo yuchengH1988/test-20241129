@@ -37,7 +37,6 @@
       alt="Sync Slide" />
   </div>
 </template>
-
 <script>
 import { ref, watch } from 'vue';
 import { gsap } from 'gsap';
@@ -102,7 +101,6 @@ export default {
   width: 333px;
   height: 338px;
 }
-
 .image-wrapper {
   width: 333px;
   height: 338px;
@@ -111,14 +109,12 @@ export default {
   align-items: center;
   overflow: hidden;
 }
-
 .image-wrapper img {
   max-width: 210%;
   min-height: 417px;
   object-fit: cover;
   object-position: -10px 84px;
 }
-
 .sync-display {
   width: 194px;
   height: 161px;
@@ -161,6 +157,5 @@ export default {
     max-width: 210%;
     object-position: 50px -66px;
   }
-
 }
 </style>

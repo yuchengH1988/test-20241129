@@ -4,7 +4,7 @@
   </template>
   
   <script>
-  import { onMounted, ref, onUnmounted } from 'vue';
+  import { onMounted, ref, onUnmounted, nextTick } from 'vue';
   import p5 from 'p5';
   export default {
     name: 'P5jsComponent',
@@ -51,9 +51,10 @@
         };
       }
       onMounted(async() => {
+        await nextTick();
         setTimeout(() => {
           p5Instance.value = new p5(sketch)
-        }, 1000)
+        }, 2000)
       });
       onUnmounted(() => {
         p5Instance.value.remove(); // 清理 p5.js 畫布
