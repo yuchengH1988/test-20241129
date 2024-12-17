@@ -7,7 +7,7 @@
       <StoryComponent :isLoading="isLoading"/>
       <ServiceComponent />
       <Banner2Component />
-      <GalleryComponent />
+      <GalleryComponent :isLoading="isLoading"/>
       <ContactComponent />
       <FooterComponent />
     </div>

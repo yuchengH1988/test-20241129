@@ -1,7 +1,7 @@
 <template>
   <div id="Gallery" class="mb-[56px] md:mb-0 relative max-w-[500px] md:max-w-none w-[89.72vw] md:w-[90.14vw]  mx-auto md:overflow-x-hidden">
     <div class="gallery_header text-primary-1 display-1">
-      <P5jsComponent />
+      <P5jsComponent :isLoading="isLoading"/>
       <div class="relative from_right">
         Gallery
       </div>
@@ -88,6 +88,11 @@
   import P5jsComponent from './P5jsComponent.vue';
   export default {
     name: "GallerComponent",
+    props: {
+      isLoading: {
+        type: Boolean
+      },
+    },
     components: {
       ArtworkComponent,
       P5jsComponent,

@@ -4,11 +4,17 @@
   </template>
   
   <script>
-  import { onMounted, ref, onUnmounted, nextTick } from 'vue';
+  import { ref, onUnmounted, watch } from 'vue';
   import p5 from 'p5';
   export default {
     name: 'P5jsComponent',
-    setup () {
+    props: {
+      isLoading: {
+        type: Boolean
+      },
+    },
+    setup (props) {
+
       const p5Instance = ref(null);
       const p5Container = ref(null); 
 
@@ -50,11 +56,12 @@
           }
         };
       }
-      onMounted(async() => {
-        await nextTick();
-        setTimeout(() => {
-          p5Instance.value = new p5(sketch)
-        }, 2000)
+      watch(() => props.isLoading, (newValue) => {
+        if (!newValue) {
+          setTimeout(() => {
+            p5Instance.value = new p5(sketch)
+          }, 2000)
+        }
       });
       onUnmounted(() => {
         p5Instance.value.remove(); // 清理 p5.js 畫布
